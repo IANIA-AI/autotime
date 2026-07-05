@@ -106,7 +106,7 @@ O projeto deve usar evaluation para medir:
 
 ## Tamanho inicial do golden dataset
 
-Para a versão de 8 semanas, mire 120 a 180 casos de alta qualidade.
+Para a versão de 10 semanas, mire 120 a 180 casos de alta qualidade.
 
 Distribuição sugerida:
 

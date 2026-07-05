@@ -20,4 +20,4 @@ Este diretório irá conter o golden dataset inicial para Text-to-SQL evaluation
 
 ## Tamanho inicial alvo
 
-Para a versão de working product de 8 semanas, mire 120-180 casos de alta qualidade.
+Para a versão de working product de 10 semanas, mire 120-180 casos de alta qualidade.

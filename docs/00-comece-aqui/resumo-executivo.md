@@ -26,7 +26,7 @@ Enterprise Text-to-SQL é arriscado porque schemas são grandes, termos de negó
 
 ## Alvo da Fase 1
 
-A Fase 1 deve entregar um working product com engineering evidence:
+A Fase 1 deve entregar um working product com engineering evidence em 10 semanas:
 
 - aplicação local standalone;
 - local LLM runtime;

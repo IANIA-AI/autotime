@@ -26,7 +26,7 @@ Resultado esperado: entender como uma pergunta vira SQL governado ou controlled 
 
 Leia:
 
-- [../03-entrega/plano-8-semanas.md](../03-entrega/plano-8-semanas.md)
+- [../03-entrega/plano-10-semanas.md](../03-entrega/plano-10-semanas.md)
 - [../03-entrega/alocacao-time.md](../03-entrega/alocacao-time.md)
 - [../03-entrega/criterios-release.md](../03-entrega/criterios-release.md)
 - [../03-entrega/perguntas-abertas.md](../03-entrega/perguntas-abertas.md)

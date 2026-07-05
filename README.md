@@ -14,7 +14,7 @@ Novos integrantes do time devem ler:
 4. [Fronteiras do Produto](docs/01-contexto-produto/fronteiras-produto.md)
 5. [Escopo da Fase 1](docs/01-contexto-produto/escopo-fase-1.md)
 6. [Visão Geral da Arquitetura](docs/02-arquitetura/visao-geral.md)
-7. [Plano de 8 Semanas](docs/03-entrega/plano-8-semanas.md)
+7. [Plano de 10 Semanas](docs/03-entrega/plano-10-semanas.md)
 
 ## Projeto em um parágrafo
 
@@ -62,4 +62,4 @@ Natural Language
 
 Este é um repositório de blueprint técnico, ainda não um repositório de implementação.
 
-O primeiro alvo de entrega proposto é um **Working Product with engineering evidence**, focado nas famílias Labor Charge e Employee, execução local de modelo, geração governada de SQL, evals, smoke tests e UAT.
+O primeiro alvo de entrega é um **Working Product with engineering evidence** em 10 semanas, focado nas famílias Labor Charge e Employee, execução local de modelo, geração governada de SQL, evals, smoke tests e UAT.

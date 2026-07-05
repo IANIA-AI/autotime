@@ -16,6 +16,11 @@ Um release candidate não deve ser declarado sem demonstrar comportamento de wor
 - Installation smoke tests passam.
 - UAT foi executado com envolvimento de AutoTime SME.
 - Limitações conhecidas estão documentadas.
+- Evidence pack final foi produzido.
+- Go/no-go técnico foi assinado por Persival.
+- Aceite/UAT foi conduzido por Erlon.
+- Deployment kit foi revisado por Fábio.
+- Eval/scoping foi validado por Marcos.
 
 ## Evidência esperada
 
@@ -23,6 +28,7 @@ Um release candidate não deve ser declarado sem demonstrar comportamento de wor
 - Eval report com métricas pass/fail e failure taxonomy.
 - Smoke-test output para o installation tier suportado.
 - UAT notes e issue list.
+- Evidence pack final.
 - Release recommendation documentada: go, conditional go ou no-go.
 
 ## Não é suficiente

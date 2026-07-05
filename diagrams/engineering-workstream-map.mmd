@@ -1,25 +1,33 @@
 flowchart LR
     START([Início do Projeto])
 
+    START --> GOV[WP0<br/>Governance + Client Delivery]
     START --> LAB[WP1<br/>Engineering Lab Setup]
-    START --> GOV[WP0<br/>Governance + Delivery]
+    START --> ARCH[Architecture + IR Draft]
+    START --> SOURCE[Source Inventory]
 
-    LAB --> SOURCES[WP2<br/>Source Canon + Semantic Catalog]
-    SOURCES --> GOLDEN[WP3<br/>Golden Dataset + Evals]
-    SOURCES --> IR[WP5<br/>IR + SQL Compiler]
+    GOV --> QUESTIONS[Open Questions + SME Coordination]
+    SOURCE --> CATALOG[WP2<br/>Semantic Catalog]
+    SOURCE --> GOLDEN[WP3<br/>Golden Dataset Ops]
 
-    LAB --> BENCH[WP4<br/>Model + Runtime Benchmark]
-    BENCH --> LLM[WP6<br/>LLM Orchestration]
+    LAB --> BENCH[WP4<br/>Runtime Benchmark]
+    LAB --> APP[WP7<br/>App/API Skeleton]
 
+    ARCH --> IR[WP5<br/>IR + SQL Compiler]
+    CATALOG --> IR
+    GOLDEN --> EVALS[WP3<br/>Eval Harness]
+
+    BENCH --> RUNTIME[Runtime Decision]
+    RUNTIME --> LLM[WP6<br/>LLM Orchestration]
     IR --> LLM
-    GOLDEN --> LLM
-    GOLDEN --> GATES[Release Gates]
+    EVALS --> LLM
 
-    LLM --> APP[WP7<br/>Standalone App]
-    APP --> PACK[WP8<br/>Packaging + Observability]
-    PACK --> UAT[WP9<br/>UAT + Release Candidate]
+    LLM --> E2E[End-to-End<br/>NL → IR → SQL → Validation → UI]
+    APP --> E2E
 
-    GATES --> UAT
-    GOV --> UAT
-
-    UAT --> END([Go / No-Go])
+    E2E --> REG[Regression + Coverage]
+    REG --> PACK[WP8<br/>Packaging + Observability]
+    PACK --> UAT_READY[UAT Readiness]
+    UAT_READY --> UAT[WP9<br/>UAT + Hardening]
+    UAT --> RC[Release Candidate]
+    RC --> END([Go / No-Go])

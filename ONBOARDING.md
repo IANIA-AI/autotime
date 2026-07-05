@@ -42,7 +42,7 @@ O LLM ajuda a interpretar o pedido, mas o SQL final precisa vir de semantic reso
 | 4 | [Visão Geral da Arquitetura](docs/02-arquitetura/visao-geral.md) | Explica o modelo simplificado do sistema. |
 | 5 | [Runtime Flow](docs/02-arquitetura/fluxo-runtime.md) | Mostra o que acontece quando o usuário faz uma pergunta. |
 | 6 | [Validation Flow](docs/02-arquitetura/fluxo-validacao.md) | Explica como o sistema bloqueia, abstém ou retorna SQL. |
-| 7 | [Plano de 8 Semanas](docs/03-entrega/plano-8-semanas.md) | Mostra a sequência de trabalho, milestones e release path. |
+| 7 | [Plano de 10 Semanas](docs/03-entrega/plano-10-semanas.md) | Mostra a sequência de trabalho, milestones, paralelização e release path. |
 | 8 | [Perguntas Abertas](docs/03-entrega/perguntas-abertas.md) | Lista decisões que dependem do AutoTime ou de SMEs. |
 
 ## Foco da primeira semana
@@ -64,10 +64,10 @@ Resultados esperados da primeira semana:
 
 | Papel | Foco principal |
 |---|---|
-| Delivery / QA | Controle de escopo, riscos, acceptance criteria e coordenação de UAT. |
-| Data / SQL / AI Engineering | Semantic catalog, SQL compiler, golden dataset e eval harness. |
-| AI Architecture / Tech Lead | Estratégia de local model, IR design, prompts, guardrails e quality gates. |
-| Platform / Fullstack / DevOps | App shell, auth, packaging, deployment, observability e smoke tests. |
+| Erlon — Client Delivery / QA / UAT / Evidence | Insumos, validações, riscos, aceite, evidence pack e UAT. |
+| Marcos — Data / SQL / Catalog / Compiler | Schema, SQL esperado, semantic catalog técnico, compiler e scoping SQL. |
+| Persival — AI Architecture / IR / Runtime / Guardrails | Arquitetura, governança do LLM, eval strategy e quality gates. |
+| Fábio — Platform / App / Deployment / Observability | Produto executável, instalável, observável e testável. |
 
 Veja [Alocação do Time](docs/03-entrega/alocacao-time.md) para a proposta de alocação nominal.
 

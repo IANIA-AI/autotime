@@ -1,6 +1,6 @@
 # Escopo da Fase 1
 
-A Fase 1 deve ser tratada como um **Working Product with engineering evidence**, não como uma plataforma enterprise multi-cliente completamente hardened.
+A Fase 1 deve ser tratada como um **Working Product with engineering evidence** em 10 semanas, não como uma plataforma enterprise multi-cliente completamente hardened.
 
 ## Incluído
 

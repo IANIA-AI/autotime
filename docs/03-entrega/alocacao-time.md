@@ -1,49 +1,45 @@
 # Alocação do Time
 
-## Modelo proposto de entrega com 4 pessoas
+## Alocação conceitual
 
-| Pessoa | Papel principal | Papel secundário | Alocação |
-|---|---|---|---:|
-| Erlon Rachi | Project/Delivery Manager | QA, validation, metrics, risk control | ~40% |
-| José Marcos Ferreira | Data/SQL/AI Engineer | Semantic catalog, compiler, evals | ~90% |
-| Persival Ballesté | AI Architect / Tech Lead | Runtime decision, prompts, guardrails, eval strategy | ~70% |
-| Fábio Sarmento | Platform / Fullstack / DevOps / Security | App, packaging, auth, observability | ~90% |
+O plano de 10 semanas adota uma distribuição simétrica por ownership, com quatro trilhas de responsabilidade equivalentes.
 
-## Esforço estimado
+A simetria está no ownership e na responsabilidade de entrega, não necessariamente na natureza das tarefas ou em uma divisão rígida de horas.
 
-Assumindo 8 semanas e 40 dias úteis:
+| Pessoa | Trilha | Papel |
+|---|---|---|
+| Erlon Rachi | Client, QA, UAT, Evidence | Garante insumos, validações, riscos, aceite e evidências |
+| José Marcos Ferreira | Data, SQL, Catalog, Compiler | Garante correção técnica do schema, SQL, catalog e scoping |
+| Persival Ballesté | AI Architecture, IR, Runtime, Guardrails | Garante arquitetura, governança do LLM, eval strategy e quality gates |
+| Fábio Sarmento | Platform, App, Deployment, Observability | Garante produto executável, instalável, observável e testável |
 
-| Pessoa | Horas totais | Média por dia útil |
-|---|---:|---:|
-| Erlon Rachi | 128h | 3,2h/dia |
-| José Marcos Ferreira | 288h | 7,2h/dia |
-| Persival Ballesté | 224h | 5,6h/dia |
-| Fábio Sarmento | 288h | 7,2h/dia |
+## Distribuição por ownership
 
-Esforço total estimado: **928h**<br/>
-Contingência recomendada: **1.000-1.050h**
+| Bloco | Owner | Peso conceitual |
+|---|---|---:|
+| Client, QA, UAT, Evidence | Erlon | 25% |
+| Data, SQL, Catalog, Compiler | Marcos | 25% |
+| AI Architecture, IR, Runtime, Guardrails | Persival | 25% |
+| Platform, App, Deployment, Observability | Fábio | 25% |
 
-## Interpretação prática
+## Responsabilidades por pessoa
 
-- Erlon: 3 a 4 horas/dia.
-- Marcos: 7 a 8 horas/dia.
-- Persival: 5 a 6 horas/dia.
-- Fabio: 7 a 8 horas/dia.
+### Erlon Rachi
 
-## Racional de consolidação de papéis
+Erlon lidera client delivery, relacionamento com AutoTime, agenda com Cole, Harold e SMEs, controle de insumos, source inventory, matriz de rastreabilidade, decision log, risk log, operação do golden dataset, UAT script, QA funcional, issue triage, evidence pack, release notes e handover.
 
-O modelo comprimido funciona porque o time combina perfis senior multi-disciplinares:
+### José Marcos Ferreira
 
-- Erlon cobre project control, acceptance, QA validation e risk.
-- Marcos cobre data, SQL, schema engineering, semantic catalog e evals.
-- Persival cobre AI architecture, runtime strategy, prompt/IR/guardrail design e technical leadership.
-- Fabio cobre fullstack implementation, platform, DevOps, packaging, auth e observability.
+Marcos lidera data/SQL engineering, apoio no restore e inspeção do demo DB, schema analysis, table/field mapping, join mapping, SQL esperado, semantic catalog técnico, SQL compiler, scope SQL logic, validators SQL junto com Persival e execução técnica dos evals.
 
-## Risco principal
+### Persival Ballesté
 
-O modelo comprimido cria gargalos. Os maiores gargalos tendem a ser:
+Persival lidera AI architecture e technical quality, incluindo arquitetura da solução, IR schema, intent taxonomy, eval strategy, model/runtime benchmark, prompt/structured output, guardrails, abstention logic, quality gates, architecture decision records e technical go/no-go.
 
-- Marcos em semantic catalog + SQL compiler + evals.
-- Fabio em app + packaging + platform + security.
-- Persival em architecture + LLM + quality gates.
-- Erlon se UAT, metrics e client coordination forem subestimados.
+### Fábio Sarmento
+
+Fábio lidera platform, fullstack e deployment, incluindo engineering lab, ambientes, backend API, frontend/UI, auth local, fila de inferência, integração com runtime LLM, observability, packaging, smoke tests técnicos e deployment kit.
+
+## Estimativa a detalhar
+
+O plano atual evita cravar carga horária rígida como premissa central. A estimativa de horas deve ser detalhada depois que o source inventory, o runtime decision e a disponibilidade de SMEs estiverem mais claros.

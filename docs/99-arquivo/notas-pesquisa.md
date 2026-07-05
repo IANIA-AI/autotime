@@ -43,7 +43,7 @@ Shortlist para Fase 1:
 - llama.cpp para perfil CPU/cross-platform.
 - vLLM para perfil Linux GPU.
 
-Outros runtimes como SGLang, TensorRT-LLM e TGI podem ser acompanhados, mas um benchmark amplo não deve fazer parte do critical path comprimido de 8 semanas.
+Outros runtimes como SGLang, TensorRT-LLM e TGI podem ser acompanhados, mas um benchmark amplo não deve fazer parte do critical path de 10 semanas.
 
 ## Estratégia Windows/Linux
 
@@ -54,7 +54,7 @@ Posicionamento recomendado:
 - Tier A: Windows/Linux CPU-compatible usando llama.cpp ou equivalente.
 - Tier B/C: Linux GPU recomendado para maior concurrency.
 
-## O que não cortar no plano de 8 semanas
+## O que não cortar no plano de 10 semanas
 
 Não cortar:
 
