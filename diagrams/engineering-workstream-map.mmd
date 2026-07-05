@@ -1,0 +1,25 @@
+flowchart LR
+    START([Project Start])
+
+    START --> LAB[WP1<br/>Engineering Lab Setup]
+    START --> GOV[WP0<br/>Governance + Delivery]
+
+    LAB --> SOURCES[WP2<br/>Source Canon + Semantic Catalog]
+    SOURCES --> GOLDEN[WP3<br/>Golden Dataset + Evals]
+    SOURCES --> IR[WP5<br/>IR + SQL Compiler]
+
+    LAB --> BENCH[WP4<br/>Model + Runtime Benchmark]
+    BENCH --> LLM[WP6<br/>LLM Orchestration]
+
+    IR --> LLM
+    GOLDEN --> LLM
+    GOLDEN --> GATES[Release Gates]
+
+    LLM --> APP[WP7<br/>Standalone App]
+    APP --> PACK[WP8<br/>Packaging + Observability]
+    PACK --> UAT[WP9<br/>UAT + Release Candidate]
+
+    GATES --> UAT
+    GOV --> UAT
+
+    UAT --> END([Go / No-Go])

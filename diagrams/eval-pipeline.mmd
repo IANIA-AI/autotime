@@ -1,0 +1,84 @@
+flowchart LR
+    subgraph INPUTS["Evaluation Inputs"]
+        Q[User Questions]
+        EXPECTED_SQL[Expected SQL]
+        EXPECTED_RESULT[Expected Result Sets]
+        NEG[Negative / Ambiguous Cases]
+        SEC[Security Cases]
+        SME[SME Labels]
+    end
+
+    subgraph GOLD["Golden Dataset"]
+        CASES[Test Cases]
+        META[Metadata<br/>family / complexity / scope / expected behavior]
+        THRESH[Acceptance Thresholds]
+    end
+
+    subgraph SUT["System Under Test"]
+        APP[Standalone App]
+        LLM[Local LLM Runtime]
+        COMP[SQL Compiler]
+        VAL[Validators]
+    end
+
+    subgraph LAB["Engineering Lab Only"]
+        DEMODB[AutoTime Demo DB]
+        RUNNER[Eval Runner]
+        COMPARE[Result Comparator]
+    end
+
+    subgraph METRICS["Metrics and Reports"]
+        IR_ACC[IR Validity]
+        SQL_PARSE[SQL Parse Pass]
+        POLICY[Policy Pass Rate]
+        EXEC_ACC[Execution Accuracy]
+        SCOPE_ACC[Scope Correctness]
+        ABSTAIN[Abstention Accuracy]
+        LAT[Latency p50/p95]
+        FAIL[Failure Taxonomy]
+        REPORT[Eval Report]
+    end
+
+    Q --> CASES
+    EXPECTED_SQL --> CASES
+    EXPECTED_RESULT --> CASES
+    NEG --> CASES
+    SEC --> CASES
+    SME --> CASES
+    META --> CASES
+    THRESH --> CASES
+
+    CASES --> RUNNER
+    RUNNER --> APP
+    APP --> LLM
+    APP --> COMP
+    APP --> VAL
+    APP --> RUNNER
+
+    RUNNER --> DEMODB
+    RUNNER --> COMPARE
+    DEMODB --> COMPARE
+    EXPECTED_RESULT --> COMPARE
+
+    COMPARE --> IR_ACC
+    COMPARE --> SQL_PARSE
+    COMPARE --> POLICY
+    COMPARE --> EXEC_ACC
+    COMPARE --> SCOPE_ACC
+    COMPARE --> ABSTAIN
+    COMPARE --> LAT
+    COMPARE --> FAIL
+
+    IR_ACC --> REPORT
+    SQL_PARSE --> REPORT
+    POLICY --> REPORT
+    EXEC_ACC --> REPORT
+    SCOPE_ACC --> REPORT
+    ABSTAIN --> REPORT
+    LAT --> REPORT
+    FAIL --> REPORT
+
+    REPORT --> GATE{Release Gate}
+    GATE -->|Pass| RC[Release Candidate]
+    GATE -->|Fail| FIX[Fix / Improve / Re-run]
+    FIX --> RUNNER

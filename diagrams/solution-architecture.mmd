@@ -1,0 +1,91 @@
+flowchart TB
+    U[Report Writer / Business User]
+
+    subgraph APP["Standalone On-Prem Application"]
+        UI[Web UI]
+        API[Backend API]
+        AUTH[Auth Module<br/>Local Users<br/>LDAP/OIDC Stub]
+        SESSION[Session Manager]
+        QUEUE[Inference Queue<br/>Concurrency Control]
+        HISTORY[Request History]
+    end
+
+    subgraph CORE["Governed SQL Generation Core"]
+        CTX[Context Selector<br/>Report Family + Semantic Context]
+        LLM[Local LLM Runtime<br/>llama.cpp / vLLM]
+        IR[Structured IR Generator<br/>NL to JSON Intent]
+        SEM[Semantic Catalog Resolver]
+        COMP[Deterministic SQL Compiler<br/>IR to T-SQL]
+        SCOPE[Scope Engine<br/>my employees / my facility / etc.]
+        VAL[SQL Validators<br/>Read-only / AST / Policy / Scope]
+        ABSTAIN[Abstention Engine]
+    end
+
+    subgraph KNOW["Versioned Knowledge Layer"]
+        SCHEMA[Schema Metadata<br/>schema.xml / table ref]
+        EXAMPLES[Example Queries + Reports]
+        GLOSSARY[Business Glossary]
+        JOINS[Allowed Joins]
+        RULES[Scope + Policy Rules]
+        CATALOG[Semantic Catalog Pack]
+    end
+
+    subgraph OBS["Observability, Audit and Evals"]
+        TRACE[Trace Store]
+        AUDIT[Audit Log]
+        FEEDBACK[User Feedback<br/>Accepted / Rejected / Edited]
+        EVALS[Eval Harness]
+        GOLDEN[Golden Dataset]
+        METRICS[Metrics Dashboard]
+    end
+
+    subgraph DEPLOY["Offline Deployment Kit"]
+        BUNDLE[Air-Gapped Bundle]
+        MODEL[Local Model Weights]
+        CONFIG[Config Files]
+        SMOKE[Smoke Tests]
+        DOCS[Install + Admin Docs]
+    end
+
+    U --> UI
+    UI --> API
+    API --> AUTH
+    API --> SESSION
+    API --> HISTORY
+    API --> QUEUE
+    QUEUE --> CTX
+
+    CTX --> CATALOG
+    CATALOG --> SCHEMA
+    CATALOG --> EXAMPLES
+    CATALOG --> GLOSSARY
+    CATALOG --> JOINS
+    CATALOG --> RULES
+
+    CTX --> LLM
+    LLM --> IR
+    IR --> SEM
+    SEM --> COMP
+    COMP --> SCOPE
+    SCOPE --> VAL
+
+    VAL -->|Pass| API
+    VAL -->|Fail| ABSTAIN
+    ABSTAIN --> API
+
+    API --> UI
+    UI --> U
+
+    API --> TRACE
+    API --> AUDIT
+    UI --> FEEDBACK
+    FEEDBACK --> EVALS
+    GOLDEN --> EVALS
+    TRACE --> EVALS
+    EVALS --> METRICS
+
+    BUNDLE --> APP
+    MODEL --> LLM
+    CONFIG --> APP
+    SMOKE --> APP
+    DOCS --> APP
