@@ -1,6 +1,8 @@
-# Evaluation Pipeline
+# Detailed Evaluation Pipeline
 
-This document describes the evaluation architecture for golden dataset, SQL correctness, policy validation and release gates.
+This reference document describes the evaluation architecture for golden dataset, SQL correctness, policy validation and release gates.
+
+For the shorter engineering entry point, start with [../04-engineering/eval-strategy.md](../04-engineering/eval-strategy.md).
 
 ```mermaid
 flowchart LR

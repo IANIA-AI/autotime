@@ -1,6 +1,6 @@
-# On-Prem Deployment Topologies
+# On-Prem Deployment Topologies Reference
 
-This document describes deployment tiers for CPU-only, Linux GPU and higher-concurrency on-premise installations.
+This reference document describes deployment tiers for CPU-only, Linux GPU and higher-concurrency on-premise installations.
 
 ```mermaid
 flowchart TB

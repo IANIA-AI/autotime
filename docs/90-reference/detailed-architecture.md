@@ -1,6 +1,8 @@
-# Solution Architecture
+# Detailed Solution Architecture
 
-This document describes the logical architecture for the standalone on-premise governed SQL generation product.
+This reference document describes the logical architecture for the standalone on-premise governed SQL generation product.
+
+For onboarding, start with [../02-architecture/overview.md](../02-architecture/overview.md).
 
 ```mermaid
 flowchart TB
