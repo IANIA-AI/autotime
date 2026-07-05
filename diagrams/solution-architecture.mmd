@@ -1,10 +1,10 @@
 flowchart TB
     U[Report Writer / Business User]
 
-    subgraph APP["Standalone On-Prem Application"]
+    subgraph APP["Aplicação Standalone On-Prem"]
         UI[Web UI]
         API[Backend API]
-        AUTH[Auth Module<br/>Local Users<br/>LDAP/OIDC Stub]
+        AUTH[Auth Module<br/>Usuários Locais<br/>LDAP/OIDC Stub]
         SESSION[Session Manager]
         QUEUE[Inference Queue<br/>Concurrency Control]
         HISTORY[Request History]
@@ -21,7 +21,7 @@ flowchart TB
         ABSTAIN[Abstention Engine]
     end
 
-    subgraph KNOW["Versioned Knowledge Layer"]
+    subgraph KNOW["Knowledge Layer Versionado"]
         SCHEMA[Schema Metadata<br/>schema.xml / table ref]
         EXAMPLES[Example Queries + Reports]
         GLOSSARY[Business Glossary]
@@ -30,7 +30,7 @@ flowchart TB
         CATALOG[Semantic Catalog Pack]
     end
 
-    subgraph OBS["Observability, Audit and Evals"]
+    subgraph OBS["Observability, Audit e Evals"]
         TRACE[Trace Store]
         AUDIT[Audit Log]
         FEEDBACK[User Feedback<br/>Accepted / Rejected / Edited]

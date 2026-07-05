@@ -1,18 +1,18 @@
 # Linux Deployment
 
-Linux is the recommended production tier for GPU-backed local inference.
+Linux é o production tier recomendado para local inference com GPU.
 
 ## Candidate runtime profiles
 
-- vLLM or equivalent for GPU serving.
-- llama.cpp for CPU or simpler deployments.
-- Local service installation or containerized installation depending on customer constraints.
+- vLLM ou equivalente para GPU serving.
+- llama.cpp para CPU ou deployments mais simples.
+- Instalação como local service ou containerized installation, dependendo das restrições do cliente.
 
-## To be defined
+## A definir
 
 - GPU requirements.
 - VRAM sizing.
-- service manager approach.
-- ports and firewall rules.
-- offline model bundle layout.
-- smoke test commands.
+- Service manager approach.
+- Ports e firewall rules.
+- Offline model bundle layout.
+- Smoke test commands.

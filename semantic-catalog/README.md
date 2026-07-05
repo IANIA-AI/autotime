@@ -1,8 +1,8 @@
 # Semantic Catalog
 
-This directory will hold the versioned semantic catalog used by the governed SQL generation core.
+Este diretório irá conter o semantic catalog versionado usado pelo governed SQL generation core.
 
-## Expected future files
+## Arquivos futuros esperados
 
 ```text
 semantic-catalog/
@@ -14,15 +14,15 @@ semantic-catalog/
 └── versions/
 ```
 
-## Purpose
+## Propósito
 
-The semantic catalog maps AutoTime schema metadata, report families, business terms, allowed joins, filters, metrics, dimensions and scope rules into a controlled representation consumable by the compiler.
+O semantic catalog mapeia AutoTime schema metadata, report families, business terms, allowed joins, filters, metrics, dimensions e scope rules para uma representação controlada consumida pelo compiler.
 
-## Phase 1 focus
+## Foco da Fase 1
 
 - Labor Charge.
 - Employee.
-- Initial scoping rules.
+- Scoping rules iniciais.
 - Supported metrics.
 - Supported dimensions.
 - Allowed joins.

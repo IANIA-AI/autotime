@@ -1,8 +1,8 @@
 # Evals
 
-This directory will hold the golden dataset, eval runners and generated eval reports.
+Este diretório irá conter o golden dataset, eval runners e generated eval reports.
 
-## Expected future structure
+## Estrutura futura esperada
 
 ```text
 evals/
@@ -12,21 +12,21 @@ evals/
 └── fixtures/
 ```
 
-## Evaluation objectives
+## Objetivos de evaluation
 
-The eval pipeline should measure:
+O eval pipeline deve medir:
 
 - IR validity;
 - SQL parse success;
 - policy pass/fail;
-- execution accuracy in engineering lab;
+- execution accuracy no engineering lab;
 - scope correctness;
 - abstention accuracy;
 - latency p50/p95;
 - failure taxonomy.
 
-## Product/runtime distinction
+## Distinção produto/runtime
 
-The engineering lab may execute SQL against the AutoTime demo DB for validation.
+O engineering lab pode executar SQL contra o AutoTime demo DB para validation.
 
-The delivered product runtime should not connect to the production database.
+O delivered product runtime não deve conectar ao production database.

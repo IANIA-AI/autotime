@@ -1,15 +1,15 @@
-# Documentation Guide
+# Guia da Documentação
 
-The documentation is numbered by reading order.
+A documentação é numerada pela ordem recomendada de leitura.
 
-| Folder | Purpose |
+| Pasta | Propósito |
 |---|---|
-| [00-start-here](00-start-here/) | Executive entry point and recommended reading sequence. |
-| [01-product-context](01-product-context/) | Product context, boundaries and Phase 1 scope. |
-| [02-architecture](02-architecture/) | Architecture overview, runtime flow and validation flow. |
-| [03-delivery](03-delivery/) | Delivery plan, ownership, release criteria and open questions. |
-| [04-engineering](04-engineering/) | Active technical decisions and engineering strategy. |
-| [90-reference](90-reference/) | Detailed reference material for deeper consultation. |
-| [99-archive](99-archive/) | Historical notes and research background. |
+| [00-comece-aqui](00-comece-aqui/) | Entrada executiva e trilha recomendada. |
+| [01-contexto-produto](01-contexto-produto/) | Contexto do produto, fronteiras e escopo da Fase 1. |
+| [02-arquitetura](02-arquitetura/) | Visão geral da arquitetura, runtime flow e validation flow. |
+| [03-entrega](03-entrega/) | Plano de entrega, ownership, critérios de release e perguntas abertas. |
+| [04-engenharia](04-engenharia/) | Decisões técnicas ativas e engineering strategy. |
+| [90-referencia](90-referencia/) | Material detalhado para consulta posterior. |
+| [99-arquivo](99-arquivo/) | Notas históricas e research background. |
 
-Start with [../ONBOARDING.md](../ONBOARDING.md) if you are new to the project.
+Comece por [../ONBOARDING.md](../ONBOARDING.md) se você está entrando agora no projeto.

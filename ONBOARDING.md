@@ -1,88 +1,88 @@
-# AutoTime Governed SQL Writer Onboarding
+# Onboarding do AutoTime Governed SQL Writer
 
-This document is the onboarding path for project sponsors, delivery leads and engineers joining the AutoTime Governed SQL Writer effort.
+Este documento é a trilha de onboarding para sponsors, delivery leads e engenheiros que entrarem no projeto AutoTime Governed SQL Writer.
 
-## 10-minute orientation
+## Orientação de 10 minutos
 
-AutoTime wants a local, customer-controlled assistant that turns report-writer questions into governed SQL for AutoTime's external Report Writer.
+O AutoTime quer um assistente local, customer-controlled, que transforme perguntas de report writers em SQL governado para o AutoTime external Report Writer.
 
-The product is not a chatbot that emits SQL. It is a governed generation system:
+O produto não é um chatbot que emite SQL. Ele é um sistema de geração governada:
 
 ```text
 Natural Language -> IR -> Semantic Catalog -> SQL Compiler -> Scope Engine -> Validators -> Governed SQL
 ```
 
-The LLM helps interpret the request, but the final SQL must come from controlled semantic resolution, deterministic compilation, scope enforcement and validation.
+O LLM ajuda a interpretar o pedido, mas o SQL final precisa vir de semantic resolution controlada, compilação determinística, scope enforcement e validation.
 
-## What the product does
+## O que o produto faz
 
-- Accepts natural-language report questions.
-- Uses local model inference inside the customer's environment.
-- Maps the request to supported AutoTime report families.
-- Generates structured intent.
-- Resolves fields, joins, metrics and filters through a semantic catalog.
-- Produces copyable SQL for AutoTime's external Report Writer.
-- Logs trace, audit and validation information.
+- Aceita perguntas de relatório em linguagem natural.
+- Usa local model inference dentro do ambiente do cliente.
+- Mapeia o pedido para report families suportadas do AutoTime.
+- Gera structured intent.
+- Resolve campos, joins, metrics e filters por meio de um semantic catalog.
+- Produz SQL copiável para o AutoTime external Report Writer.
+- Registra trace, audit e validation information.
 
-## What the product does not do
+## O que o produto não faz
 
-- It does not execute SQL in production.
-- It does not connect to the production database at runtime.
-- It does not call cloud LLM APIs.
-- It does not bypass AutoTime permissions or Report Writer controls.
-- It does not promise valid SQL for unsupported report families or unknown scope rules.
+- Não executa SQL em produção.
+- Não conecta ao production database em runtime.
+- Não chama cloud LLM APIs.
+- Não contorna permissões do AutoTime nem controles do Report Writer.
+- Não promete SQL válido para report families não suportadas ou scope rules desconhecidas.
 
-## Read in this order
+## Leia nesta ordem
 
-| Step | Document | Why it matters |
+| Passo | Documento | Por que importa |
 |---:|---|---|
-| 1 | [Executive Summary](docs/00-start-here/executive-summary.md) | Shared understanding of the project. |
-| 2 | [Product Boundaries](docs/01-product-context/product-boundaries.md) | Rules the implementation must not violate. |
-| 3 | [Phase 1 Scope](docs/01-product-context/phase-1-scope.md) | What is included and excluded from the first delivery. |
-| 4 | [Architecture Overview](docs/02-architecture/overview.md) | The simplified system model. |
-| 5 | [Runtime Flow](docs/02-architecture/runtime-flow.md) | What happens when a user asks a question. |
-| 6 | [Validation Flow](docs/02-architecture/validation-flow.md) | How the system blocks, abstains or returns SQL. |
-| 7 | [8-Week Delivery Plan](docs/03-delivery/8-week-plan.md) | Work sequence, milestones and release path. |
-| 8 | [Open Questions](docs/03-delivery/open-questions.md) | Decisions that need AutoTime or SME input. |
+| 1 | [Resumo Executivo](docs/00-comece-aqui/resumo-executivo.md) | Alinha o entendimento do projeto. |
+| 2 | [Fronteiras do Produto](docs/01-contexto-produto/fronteiras-produto.md) | Define regras que a implementação não pode violar. |
+| 3 | [Escopo da Fase 1](docs/01-contexto-produto/escopo-fase-1.md) | Mostra o que entra e o que fica fora da primeira entrega. |
+| 4 | [Visão Geral da Arquitetura](docs/02-arquitetura/visao-geral.md) | Explica o modelo simplificado do sistema. |
+| 5 | [Runtime Flow](docs/02-arquitetura/fluxo-runtime.md) | Mostra o que acontece quando o usuário faz uma pergunta. |
+| 6 | [Validation Flow](docs/02-arquitetura/fluxo-validacao.md) | Explica como o sistema bloqueia, abstém ou retorna SQL. |
+| 7 | [Plano de 8 Semanas](docs/03-entrega/plano-8-semanas.md) | Mostra a sequência de trabalho, milestones e release path. |
+| 8 | [Perguntas Abertas](docs/03-entrega/perguntas-abertas.md) | Lista decisões que dependem do AutoTime ou de SMEs. |
 
-## First-week focus
+## Foco da primeira semana
 
-The first week should produce clarity and working foundations, not polished UX.
+A primeira semana deve produzir clareza e fundações operacionais, não UX polida.
 
-Expected first-week outcomes:
+Resultados esperados da primeira semana:
 
-- engineering lab environment defined;
-- AutoTime demo DB and schema artifacts identified;
-- report examples collected;
-- Phase 1 report families confirmed;
-- semantic catalog format drafted;
-- golden dataset case format drafted;
-- runtime benchmark plan agreed;
-- top open questions assigned to owners.
+- engineering lab definido;
+- AutoTime demo DB e schema artifacts identificados;
+- report examples coletados;
+- Phase 1 report families confirmadas;
+- formato do semantic catalog rascunhado;
+- formato dos casos do golden dataset rascunhado;
+- runtime benchmark plan acordado;
+- principais perguntas abertas atribuídas a owners.
 
-## Team responsibilities
+## Responsabilidades do time
 
-| Role | Primary focus |
+| Papel | Foco principal |
 |---|---|
-| Delivery / QA | Scope control, risk tracking, acceptance criteria, UAT coordination. |
-| Data / SQL / AI Engineering | Semantic catalog, SQL compiler, golden dataset and eval harness. |
-| AI Architecture / Tech Lead | Local model strategy, IR design, prompts, guardrails and quality gates. |
-| Platform / Fullstack / DevOps | App shell, auth, packaging, deployment, observability and smoke tests. |
+| Delivery / QA | Controle de escopo, riscos, acceptance criteria e coordenação de UAT. |
+| Data / SQL / AI Engineering | Semantic catalog, SQL compiler, golden dataset e eval harness. |
+| AI Architecture / Tech Lead | Estratégia de local model, IR design, prompts, guardrails e quality gates. |
+| Platform / Fullstack / DevOps | App shell, auth, packaging, deployment, observability e smoke tests. |
 
-See [Team Allocation](docs/03-delivery/team-allocation.md) for the proposed named allocation.
+Veja [Alocação do Time](docs/03-entrega/alocacao-time.md) para a proposta de alocação nominal.
 
-## Critical risks
+## Riscos críticos
 
-- Business scope semantics such as "my employees" or "my facility" may be harder than SQL syntax.
-- The semantic catalog and golden dataset are first-class engineering assets, not documentation extras.
-- Windows support is a product-tier decision and should not be promised as equal to Linux GPU serving before benchmark.
-- A release candidate without eval evidence should not be considered ready.
+- Semânticas de business scope como "my employees" ou "my facility" podem ser mais difíceis que a sintaxe SQL.
+- O semantic catalog e o golden dataset são engineering assets de primeira classe, não extras de documentação.
+- Windows support é uma decisão de product tier e não deve ser prometido como equivalente a Linux GPU serving antes do benchmark.
+- Um release candidate sem eval evidence não deve ser considerado pronto.
 
-## Detailed reference
+## Referência detalhada
 
-After the onboarding path, use:
+Depois da trilha de onboarding, use:
 
-- [Detailed Solution Architecture](docs/90-reference/detailed-architecture.md)
-- [Evaluation Pipeline](docs/90-reference/eval-pipeline.md)
-- [Deployment Topologies](docs/90-reference/deployment-topologies.md)
-- [Research Notes](docs/99-archive/research-notes.md)
+- [Arquitetura Detalhada](docs/90-referencia/arquitetura-detalhada.md)
+- [Pipeline de Evals](docs/90-referencia/pipeline-evals.md)
+- [Topologias de Deployment](docs/90-referencia/topologias-deployment.md)
+- [Notas de Pesquisa](docs/99-arquivo/notas-pesquisa.md)

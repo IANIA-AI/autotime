@@ -1,23 +1,23 @@
 # Golden Dataset
 
-This directory will contain the initial golden dataset for Text-to-SQL evaluation.
+Este diretório irá conter o golden dataset inicial para Text-to-SQL evaluation.
 
-## Recommended fields
+## Campos recomendados
 
-| Field | Description |
+| Campo | Descrição |
 |---|---|
-| case_id | Stable unique case ID |
-| family | Report family, e.g. Labor Charge or Employee |
+| case_id | ID único e estável do caso |
+| family | Report family, por exemplo Labor Charge ou Employee |
 | complexity | simple, medium, complex |
-| question | Natural language question |
+| question | Pergunta em linguagem natural |
 | expected_behavior | generate_sql, abstain, block |
-| expected_sql | Expected SQL, when applicable |
-| expected_result_reference | Result-set fixture or checksum, when applicable |
-| requires_scope | Whether managerial scope is required |
+| expected_sql | Expected SQL, quando aplicável |
+| expected_result_reference | Fixture ou checksum de result set, quando aplicável |
+| requires_scope | Se managerial scope é exigido |
 | scope_type | my_employees, my_facility, etc. |
-| security_case | Whether this is a safety test |
-| notes | SME notes |
+| security_case | Se é um safety test |
+| notes | Notas de SME |
 
-## Initial target size
+## Tamanho inicial alvo
 
-For the 8-week working-product version, target 120-180 high-quality cases.
+Para a versão de working product de 8 semanas, mire 120-180 casos de alta qualidade.

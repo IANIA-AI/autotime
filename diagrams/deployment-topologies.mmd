@@ -1,5 +1,5 @@
 flowchart TB
-    subgraph CUSTOMER["Customer-Controlled On-Prem Environment"]
+    subgraph CUSTOMER["Ambiente On-Prem Customer-Controlled"]
         USER[Report Writers]
         APP[Standalone Web App]
         CATALOG[Local Semantic Catalog]
@@ -18,29 +18,29 @@ flowchart TB
     OUTPUT --> RW
     RW --> DB
 
-    APP -. no runtime DB connection .- DB
-    APP -. no cloud .- CLOUDX[(External Cloud / LLM APIs)]
+    APP -. sem runtime DB connection .- DB
+    APP -. sem cloud .- CLOUDX[(External Cloud / LLM APIs)]
 
-    subgraph TIERA["Tier A - CPU / Cross-Platform / up to approx. 10 users"]
-        A_OS[Windows or Linux]
+    subgraph TIERA["Tier A - CPU / Cross-Platform / até aprox. 10 usuários"]
+        A_OS[Windows ou Linux]
         A_RUNTIME[llama.cpp Server]
         A_MODEL[7B-14B Quantized GGUF]
         A_QUEUE[Strict Queue + Rate Limits]
     end
 
-    subgraph TIERB["Tier B - Linux GPU / up to approx. 20 users"]
+    subgraph TIERB["Tier B - Linux GPU / até aprox. 20 usuários"]
         B_OS[Linux]
-        B_RUNTIME[vLLM or equivalent]
+        B_RUNTIME[vLLM ou equivalente]
         B_MODEL[14B-32B Model]
         B_GPU[Single GPU >= 16-24GB VRAM]
         B_BATCH[Continuous Batching]
     end
 
-    subgraph TIERC["Tier C - Linux GPU / up to approx. 30 users"]
+    subgraph TIERC["Tier C - Linux GPU / até aprox. 30 usuários"]
         C_OS[Linux]
-        C_RUNTIME[vLLM / SGLang / equivalent]
-        C_MODEL[32B or optimized 14B]
-        C_GPU[Higher VRAM GPU or multi-worker]
+        C_RUNTIME[vLLM / SGLang / equivalente]
+        C_MODEL[32B ou 14B otimizado]
+        C_GPU[Higher VRAM GPU ou multi-worker]
         C_GATEWAY[Local Gateway + Worker Replicas]
     end
 

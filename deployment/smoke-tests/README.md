@@ -1,16 +1,16 @@
 # Smoke Tests
 
-Smoke tests should validate that an installed package works in a clean environment.
+Smoke tests devem validar que um pacote instalado funciona em um ambiente limpo.
 
-## Minimum smoke tests
+## Smoke tests mínimos
 
-- app starts;
-- local model runtime starts;
-- semantic catalog loads;
-- health endpoint returns OK;
-- sample prompt generates valid IR;
-- compiler generates SQL;
-- validators pass safe SQL;
-- validators block DDL/DML;
-- audit log is written;
-- package version is visible.
+- App inicia.
+- Local model runtime inicia.
+- Semantic catalog carrega.
+- Health endpoint retorna OK.
+- Sample prompt gera IR válido.
+- Compiler gera SQL.
+- Validators aprovam SQL seguro.
+- Validators bloqueiam DDL/DML.
+- Audit log é escrito.
+- Package version fica visível.

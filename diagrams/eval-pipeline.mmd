@@ -1,5 +1,5 @@
 flowchart LR
-    subgraph INPUTS["Evaluation Inputs"]
+    subgraph INPUTS["Inputs de Evaluation"]
         Q[User Questions]
         EXPECTED_SQL[Expected SQL]
         EXPECTED_RESULT[Expected Result Sets]
@@ -27,7 +27,7 @@ flowchart LR
         COMPARE[Result Comparator]
     end
 
-    subgraph METRICS["Metrics and Reports"]
+    subgraph METRICS["Metrics e Reports"]
         IR_ACC[IR Validity]
         SQL_PARSE[SQL Parse Pass]
         POLICY[Policy Pass Rate]
@@ -80,5 +80,5 @@ flowchart LR
 
     REPORT --> GATE{Release Gate}
     GATE -->|Pass| RC[Release Candidate]
-    GATE -->|Fail| FIX[Fix / Improve / Re-run]
+    GATE -->|Fail| FIX[Corrigir / Melhorar / Reexecutar]
     FIX --> RUNNER

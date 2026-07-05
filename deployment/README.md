@@ -1,8 +1,8 @@
 # Deployment
 
-This directory will hold installation assets, smoke tests and deployment documentation.
+Este diretório irá conter installation assets, smoke tests e documentação de deployment.
 
-## Expected future structure
+## Estrutura futura esperada
 
 ```text
 deployment/
@@ -12,12 +12,12 @@ deployment/
 └── install-guides/
 ```
 
-## Deployment principles
+## Princípios de deployment
 
 - customer-controlled on-premise installation;
-- no cloud LLM dependency;
-- no external API dependency;
-- offline bundle support;
+- sem dependência de cloud LLM;
+- sem dependência de external API;
+- suporte a offline bundle;
 - local model weights;
 - local semantic catalog;
-- local logs and audit trail.
+- local logs e audit trail.

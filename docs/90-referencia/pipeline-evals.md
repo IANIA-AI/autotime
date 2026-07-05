@@ -1,12 +1,12 @@
-# Detailed Evaluation Pipeline
+# Pipeline Detalhado de Evals
 
-This reference document describes the evaluation architecture for golden dataset, SQL correctness, policy validation and release gates.
+Este documento de referência descreve a arquitetura de evals para golden dataset, SQL correctness, policy validation e release gates.
 
-For the shorter engineering entry point, start with [../04-engineering/eval-strategy.md](../04-engineering/eval-strategy.md).
+Para a entrada curta de engenharia, comece por [../04-engenharia/estrategia-evals.md](../04-engenharia/estrategia-evals.md).
 
 ```mermaid
 flowchart LR
-    subgraph INPUTS["Evaluation Inputs"]
+    subgraph INPUTS["Inputs de Evaluation"]
         Q[User Questions]
         EXPECTED_SQL[Expected SQL]
         EXPECTED_RESULT[Expected Result Sets]
@@ -34,7 +34,7 @@ flowchart LR
         COMPARE[Result Comparator]
     end
 
-    subgraph METRICS["Metrics and Reports"]
+    subgraph METRICS["Metrics e Reports"]
         IR_ACC[IR Validity]
         SQL_PARSE[SQL Parse Pass]
         POLICY[Policy Pass Rate]
@@ -87,55 +87,55 @@ flowchart LR
 
     REPORT --> GATE{Release Gate}
     GATE -->|Pass| RC[Release Candidate]
-    GATE -->|Fail| FIX[Fix / Improve / Re-run]
+    GATE -->|Fail| FIX[Corrigir / Melhorar / Reexecutar]
     FIX --> RUNNER
 ```
 
-## Why evals are central
+## Por que evals são centrais
 
-Evals should not be treated as final QA. They are part of the engineering system.
+Evals não devem ser tratadas como QA final. Elas são parte do engineering system.
 
-The project should use evaluation to measure:
+O projeto deve usar evaluation para medir:
 
-- whether the LLM generated a valid structured intent;
-- whether the compiler generated valid SQL;
-- whether the SQL respected scope and policy rules;
-- whether expected and generated SQL return equivalent results in the engineering lab;
-- whether the system abstains when it should;
-- whether performance remains acceptable under concurrent use.
+- se o LLM gerou um structured intent válido;
+- se o compiler gerou SQL válido;
+- se o SQL respeitou scope e policy rules;
+- se expected SQL e generated SQL retornam resultados equivalentes no engineering lab;
+- se o sistema abstém quando deve;
+- se performance permanece aceitável sob concurrent use.
 
-## Initial golden dataset size
+## Tamanho inicial do golden dataset
 
-For the 8-week version, target 120 to 180 high-quality cases.
+Para a versão de 8 semanas, mire 120 a 180 casos de alta qualidade.
 
-Suggested distribution:
+Distribuição sugerida:
 
-| Case type | Suggested count |
+| Tipo de caso | Quantidade sugerida |
 |---|---:|
-| Labor Charge simple/medium | 35 |
-| Labor Charge complex | 15 |
-| Employee simple/medium | 35 |
-| Employee complex | 15 |
+| Labor Charge simples/médio | 35 |
+| Labor Charge complexo | 15 |
+| Employee simples/médio | 35 |
+| Employee complexo | 15 |
 | Scoping / my X cases | 25 |
 | Negative / ambiguous cases | 20 |
 | Security / blocking cases | 15 |
-| Regression cases from existing reports | 20 |
+| Regression cases de existing reports | 20 |
 
-Approximate total: 160 cases.
+Total aproximado: 160 casos.
 
-## Initial metrics
+## Métricas iniciais
 
-| Metric | Initial target |
+| Métrica | Target inicial |
 |---|---:|
 | IR JSON validity | >= 98% |
 | SQL parse pass | >= 95% |
 | Policy pass correctness | >= 98% |
 | DDL/DML blocking | 100% |
 | Abstention accuracy | >= 90% |
-| Execution accuracy | 80-85% initial; target 90%+ |
-| Scope correctness | >= 90% initial; target 95%+ |
-| Install smoke test | 100% on supported tier |
+| Execution accuracy | 80-85% inicial; target 90%+ |
+| Scope correctness | >= 90% inicial; target 95%+ |
+| Install smoke test | 100% no tier suportado |
 
-## Lab-only DB execution
+## Execução de DB apenas no lab
 
-The engineering lab may execute SQL against the AutoTime demo DB to compare expected and generated result sets. This is different from product runtime, where the application should not connect to the database.
+O engineering lab pode executar SQL contra o AutoTime demo DB para comparar expected result sets e generated result sets. Isso é diferente do product runtime, em que a aplicação não deve conectar ao database.

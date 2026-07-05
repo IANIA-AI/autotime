@@ -1,18 +1,18 @@
 # Windows Deployment
 
-Windows support should be treated as a product-tier decision.
+Windows support deve ser tratado como uma decisão de product tier.
 
-## Recommended positioning
+## Posicionamento recomendado
 
-- Windows may be viable for CPU-compatible deployments using llama.cpp or equivalent.
-- High-throughput GPU serving may be better positioned as Linux-first.
-- If Windows cannot support the selected runtime reliably, document it as a limited or unsupported tier for that runtime.
+- Windows pode ser viável para CPU-compatible deployments usando llama.cpp ou equivalente.
+- High-throughput GPU serving deve ser posicionado como Linux-first.
+- Se Windows não suportar o runtime selecionado de forma confiável, documentar como tier limitado ou não suportado para esse runtime.
 
-## To be defined
+## A definir
 
-- install mode;
-- service wrapper;
-- local model path;
-- config path;
-- log path;
-- smoke test procedure.
+- Install mode.
+- Service wrapper.
+- Local model path.
+- Config path.
+- Log path.
+- Smoke test procedure.
