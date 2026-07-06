@@ -2,6 +2,11 @@
 
 Estes itens devem ser validados com AutoTime, Cole, Harold e SMEs relevantes.
 
+> **Atualização (Annex v1.2, jun/2026):** itens marcados ✅ foram confirmados pelo
+> AutoTime no documento "AutoTime Governed AI Report Writer — Premises
+> Confirmation & Technical Annex v1.2". Ver
+> [Mapeamento Interno ↔ Cliente](../01-contexto-produto/mapeamento-cliente.md).
+
 ## Produto e uso
 
 1. Qual é o número esperado de named users por cliente?
@@ -9,6 +14,7 @@ Estes itens devem ser validados com AutoTime, Cole, Harold e SMEs relevantes.
 3. Que expectativa de latency é aceitável para report writers?
 4. O produto deve retornar somente SQL, ou SQL mais explicação e caveats?
 5. Os usuários devem poder avaliar, aceitar, rejeitar ou anotar generated SQL?
+6. ✅ Prioridade das report families confirmada — taxonomia de 9 famílias em waves (ver [report-families.md](../01-contexto-produto/report-families.md)); Fase 1 permanece em Labor Charge e Employee.
 
 ## Infraestrutura
 
@@ -22,12 +28,12 @@ Estes itens devem ser validados com AutoTime, Cole, Harold e SMEs relevantes.
 
 ## Database e schema
 
-1. Qual versão do AutoTime é o target baseline?
+1. ✅ Versão baseline confirmada: SQL Server 2022, com desenvolvimento sobre SQL Express 2022.
 2. Quão estável é o schema entre versões de clientes?
 3. Existem mudanças específicas de schema no AutoTime 2.3+ e 2.4+?
 4. Quais schema artifacts são canônicos?
-5. As tabelas query_context e query_* são suficientes para inferir o comportamento do Report Writer?
-6. Existem report SQL examples para Labor Charge e Employee?
+5. ✅ As tabelas query_context e query_* foram confirmadas como insumo (head start para o semantic catalog e para a scope logic — ver WP2 no [Plano de 10 Semanas](plano-10-semanas.md)).
+6. ✅ Dados do demo DB são não sensíveis e as restore instructions estão disponíveis. Report SQL examples para Labor Charge e Employee seguem como insumo a coletar (source inventory).
 
 ## Scoping e security
 
@@ -40,7 +46,7 @@ Estes itens devem ser validados com AutoTime, Cole, Harold e SMEs relevantes.
 
 ## Golden dataset e UAT
 
-1. Quem no AutoTime validará expected SQL?
+1. ✅ Cole é o ponto focal primário do AutoTime para validação técnica.
 2. Quem fornecerá perguntas reais de relatório?
 3. Quantos casos Cole/SME conseguem validar por semana?
 4. O que define "correct enough" para o working product inicial?

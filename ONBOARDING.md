@@ -2,6 +2,10 @@
 
 Este documento é a trilha de onboarding para sponsors, delivery leads e engenheiros que entrarem no projeto AutoTime Governed SQL Writer.
 
+> Nome externo (client-facing): **AutoTime Governed AI Report Writer**. Ver
+> [Mapeamento Interno ↔ Cliente](docs/01-contexto-produto/mapeamento-cliente.md)
+> antes de qualquer call, e-mail ou documento enviado ao AutoTime.
+
 ## Orientação de 10 minutos
 
 O AutoTime quer um assistente local, customer-controlled, que transforme perguntas de report writers em SQL governado para o AutoTime external Report Writer.
@@ -44,6 +48,7 @@ O LLM ajuda a interpretar o pedido, mas o SQL final precisa vir de semantic reso
 | 6 | [Validation Flow](docs/02-arquitetura/fluxo-validacao.md) | Explica como o sistema bloqueia, abstém ou retorna SQL. |
 | 7 | [Plano de 10 Semanas](docs/03-entrega/plano-10-semanas.md) | Mostra a sequência de trabalho, milestones, paralelização e release path. |
 | 8 | [Perguntas Abertas](docs/03-entrega/perguntas-abertas.md) | Lista decisões que dependem do AutoTime ou de SMEs. |
+| 9 | [Mapeamento Interno ↔ Cliente](docs/01-contexto-produto/mapeamento-cliente.md) | Vocabulário a usar (e a evitar) com o AutoTime. |
 
 ## Foco da primeira semana
 

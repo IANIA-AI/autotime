@@ -37,3 +37,10 @@ Um release candidate não deve ser declarado sem demonstrar comportamento de wor
 - Model benchmark sem business-case evals.
 - UI demo sem evidência de catalog, scope e validators.
 - Release candidate que depende de cloud LLM APIs.
+
+## Destino do release candidate
+
+O release candidate aprovado é o artefato que entra na **Fase 2 — Piloto
+Controlado** (instalação no ambiente de um cliente do AutoTime selecionado).
+O termo "POC" não é usado neste projeto — ver
+[Mapeamento Interno ↔ Cliente](../01-contexto-produto/mapeamento-cliente.md).

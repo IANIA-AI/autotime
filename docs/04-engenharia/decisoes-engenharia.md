@@ -16,6 +16,15 @@ Este documento acompanha decisões propostas e decisões abertas de engenharia.
 | Shortlist de model runtime | llama.cpp e vLLM primeiro | Cobre cross-platform CPU e Linux GPU |
 | Packaging | Linux package primeiro, Windows best effort/limited tier | Protege o timeline de 10 semanas |
 
+## Decisões confirmadas (Annex v1.2)
+
+| Decisão | Direção | Racional |
+|---|---|---|
+| Dialeto SQL alvo | T-SQL primeiro (SQL Server 2022 / Express 2022) | Baseline confirmado pelo AutoTime no Annex v1.2 |
+| Suporte a Oracle | Depois, via dialect adapter no mesmo produto | Não é build paralelo; adapter sobre o mesmo compiler/IR |
+| Timeline da Fase 1 | 10 semanas, com M3 "Pronto para Piloto" na S8 | Caminho crítico externo + dois ciclos de regressão (ver [Plano de 10 Semanas](../03-entrega/plano-10-semanas.md)) |
+| Terminologia de fases | "Piloto", nunca "POC"; "POC-ready" → "Pronto para Piloto" | Fase 2 instala o produto real em ambiente controlado, não prova de conceito descartável (ver [Mapeamento Interno ↔ Cliente](../01-contexto-produto/mapeamento-cliente.md)) |
+
 ## Decisões ainda abertas
 
 | Decisão | Opções | Owner | Quando necessário |
