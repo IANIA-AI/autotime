@@ -2,6 +2,10 @@
 
 Este repositório contém o blueprint técnico do **AutoTime Governed SQL Writer**: uma aplicação on-premise, com local LLM, para ajudar report writers do AutoTime a gerar SQL governado a partir de linguagem natural.
 
+> Nome externo (client-facing): **AutoTime Governed AI Report Writer**. Ver
+> [Mapeamento Interno ↔ Cliente](docs/01-contexto-produto/mapeamento-cliente.md)
+> para o vocabulário completo usado com o AutoTime.
+
 O repositório está organizado para onboarding primeiro e referência detalhada depois.
 
 ## Comece aqui
@@ -47,7 +51,7 @@ Natural Language
 | Área | Propósito |
 |---|---|
 | [docs/00-comece-aqui](docs/00-comece-aqui/) | Entrada executiva e trilha de leitura. |
-| [docs/01-contexto-produto](docs/01-contexto-produto/) | Contexto do produto, fronteiras e escopo da Fase 1. |
+| [docs/01-contexto-produto](docs/01-contexto-produto/) | Contexto do produto, fronteiras, escopo da Fase 1, report families e [mapeamento de vocabulário com o cliente](docs/01-contexto-produto/mapeamento-cliente.md). |
 | [docs/02-arquitetura](docs/02-arquitetura/) | Arquitetura simplificada, runtime flow e validation flow. |
 | [docs/03-entrega](docs/03-entrega/) | Plano de entrega, alocação do time, critérios de release e perguntas abertas. |
 | [docs/04-engenharia](docs/04-engenharia/) | Decisões ativas de engenharia e eval strategy. |
