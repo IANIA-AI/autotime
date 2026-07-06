@@ -40,6 +40,14 @@ Exemplos que exigem regras explícitas:
 
 Scope desconhecido ou não suportado deve gerar abstention, não SQL adivinhado.
 
+Nuance importante (confirmada pelo AutoTime, Annex v1.2): a ferramenta **não
+enforça acesso**. Report writers operam com admin visibility, e os scope
+filters gerados são parametrizados e resolvidos em run-time pelo AutoTime para
+o usuário que executa o relatório (writer ≠ runner). A responsabilidade do
+produto é gerar o filtro correto — a autorização em execução permanece 100%
+do AutoTime. Ver [Mapeamento Interno ↔ Cliente](mapeamento-cliente.md) para o
+vocabulário completo usado com o cliente.
+
 ## Fronteiras de deployment
 
 O modelo alvo de deployment é customer-controlled e on-premise.
