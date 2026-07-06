@@ -4,6 +4,27 @@ O plano oficial de entrega tem 10 semanas e quatro trilhas simétricas: Erlon em
 
 O plano de 10 semanas equilibra prazo, carga de trabalho freelancer e qualidade técnica, mantendo quatro trilhas paralelas com ownership claro.
 
+## Caminho crítico e justificativa das 10 semanas
+
+O relógio das semanas críticas não é controlado pela Iania: catalog, golden dataset e scope engine dependem de insumos e validações do AutoTime (demo DB, report examples, SME scoping session, throughput de validação do SME). O buffer do plano está posicionado onde está a variabilidade — nas dependências externas (critical chain).
+
+A qualidade em enterprise Text-to-SQL vem de ciclos de failure taxonomy → correção → re-eval (DIN-SQL, DAIL-SQL, BIRD), e cada ciclo consome calendário, não apenas esforço. O plano garante dois ciclos completos de regressão (S6–S7 e S8→S9).
+
+As quatro trilhas já são paralelas desde a S1: comprimir o calendário não cria paralelismo novo — o gargalo é sequencial (IR → compiler → e2e → regressão) e externo (SME). O plano de 10 semanas já é a versão comprimida: os cortes permitidos (ceremony, benchmark amplo, UX polish) já foram feitos; evals, golden dataset e validators não se cortam.
+
+## Mapeamento com os milestones externos (Annex v1.2)
+
+| Milestone externo | Semana interna | Significado |
+|---|---:|---|
+| M1 | S4 | Runtime/model decision + IR v1 |
+| M2 | S6 | Primeiro fluxo end-to-end NL → IR → SQL → validation → UI |
+| M3 — Pronto para Piloto | S8 | Working application + deployment kit + smoke tests |
+| Go / No-Go | S10 | Release candidate + evidence pack + handover |
+
+As semanas 9–10 são o **Sprint conjunto de UAT & Hardening**, com participação do SME do AutoTime. O marco externo de 8 semanas permanece (M3); as 2 semanas adicionais são um estágio de qualidade, não dilatação.
+
+Ver também [Mapeamento Interno ↔ Cliente](../01-contexto-produto/mapeamento-cliente.md) para o vocabulário completo usado com o AutoTime.
+
 ## Workstream Map
 
 ```mermaid
@@ -53,9 +74,9 @@ flowchart LR
 | 5 | Compiler v0, scoping, NL→IR, UI funcional | SQL compiler v0 + scope v0 |
 | 6 | End-to-end inicial e evals técnicos | NL→IR→SQL→validation→UI |
 | 7 | Cobertura, regressão, packaging draft | Regression report + package draft |
-| 8 | Deployment kit, concorrência, UAT readiness | UAT package + smoke tests |
-| 9 | UAT e hardening | UAT findings + correções críticas |
-| 10 | Release candidate e handover | RC + reports + go/no-go |
+| 8 | Deployment kit, concorrência, UAT readiness | UAT package + smoke tests **(M3 — Pronto para Piloto)** |
+| 9 | Sprint conjunto de UAT & Hardening (parte 1/2) | UAT findings + correções críticas |
+| 10 | Sprint conjunto de UAT & Hardening (parte 2/2) — release candidate e handover | RC + reports + go/no-go |
 
 ## Ownership simétrico
 
